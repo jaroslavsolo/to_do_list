@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="row">
+    <div class="col-md-3">
+      <h1>To do list</h1>
+    </div>
+    <% if current_user %>
+      <div class="col-md-6">
+        <p><%= current_user.email %></p>
+      </div>
+      <div class="col-md-3">
+        <%= link_to destroy_user_session_path,
+            method: :delete, id: "sign_out" do %>
+              <i class="fa fa-sign-out midle out" aria-hidden="true"></i>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

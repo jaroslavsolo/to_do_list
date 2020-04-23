@@ -1,0 +1,9 @@
+<%= form_for(tag) do |f| %>
+  <p>
+    <b>Введіть назву вкладки</b><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.submit "Зберегти" %>
+  </p>
+<% end %>

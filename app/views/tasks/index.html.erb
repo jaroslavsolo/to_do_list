@@ -1,0 +1,58 @@
+<h1>Всі завдання</h1>
+<br></br>
+<div class="row">
+  <div class="col-md-9">
+
+    <% @tasks.each do |task| %>
+      <div class="card card-body bg-light task">
+        <div class="row">
+          <div class="col-md-1">
+            <% if task.status %>
+              <i class="fa fa-check i-task" aria-hidden="true"></i>
+            <% else %>
+              <i class="fa fa-circle-thin i-task" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <% if task.status %>
+            <div class="col-md-3 status">
+              <%= task.title %>
+            </div>
+          <%else%>
+            <div class="col-md-3">
+              <%= task.title %>
+            </div>
+          <% end %>
+          <div class="col-md-4">
+            <%= task.body %>
+          </div>
+          <div class="col-md-2">
+            <%=
+              button_to "Змінити", change_status_task_path(task),
+              id: "change_status_#{task.id}",
+              class: "btn btn-success", :method => :get
+            %>
+          </div>
+          <div class="col-md-1">
+            <%= link_to edit_task_path(task), id: "edit_task_#{task.id}" do %>
+                  <i class="fa fa-pencil i-task" aria-hidden="true"></i>
+            <% end %>
+          </div>
+          <div class="col-md-1">
+            <%= link_to task_path(task), method: :delete, data: { confirm: "Ви впевнені?" },
+                  id: "delete_task_#{task.id}" do %>
+                  <i class="fa fa-trash i-task" aria-hidden="true"></i>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+    <br></br>
+  </div>
+  <div class="col-md-3">
+    <%= link_to new_task_path, id: "new_task" do %>
+          <i class="fa fa-plus-square-o big" aria-hidden="true"></i>
+    <% end %>
+  </div>
+
+</div>

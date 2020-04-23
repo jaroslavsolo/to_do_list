@@ -1,0 +1,17 @@
+<%= form_for(task) do |f| %>
+  <p>
+    <b>Введіть заголовок завдання</b><br>
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <b>Опишіть завдання</b><br>
+    <%= f.text_area :body, size: "60x6" %>
+  </p>
+  <p>
+    <b>Виберіть вкладку</b><br>
+    <%= f.collection_select(:tag_id, current_user.tags, :id, :name) %>
+  </p>
+  <p>
+    <%= f.submit "Зберегти" %>
+  </p>
+<% end %>

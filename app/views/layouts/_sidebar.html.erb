@@ -1,0 +1,22 @@
+<div class="sidebar w3-bar-block">
+  <h3 class="w3-bar-item">Вкладки</h3>
+  <% if current_user %>
+    <%= link_to "Всі завдання (#{current_user.tasks.count})", tasks_path, class: params[:action] == "index" && params[:controller] == "tasks" ? "menu-set" : "w3-bar-item w3-button" %>
+
+    <% @tags.each do |tag| %>
+      <% if tag.id %>
+        <%= link_to "#{tag.name} (#{tag.tasks.count})", tag_path(tag),
+              class: params[:id] == tag.id.to_s ? "menu-set" : "w3-bar-item w3-button"
+        %>
+      <% end %>
+    <% end %>
+
+    <br></br>
+    <%= link_to "Нова вкладка", new_tag_path,
+          class: params[:action] == "new" && params[:controller] == "tags" ? "menu-set" : "w3-bar-item w3-button"
+    %>
+    <%= link_to "Всі вкладки", tags_path,
+          class: params[:action] == "index" && params[:controller] == "tags" ? "menu-set" : "w3-bar-item w3-button"
+    %>
+  <% end %>
+</div>

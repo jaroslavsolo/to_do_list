@@ -1,0 +1,99 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import 'bootstrap';
+ @import "font-awesome";
+
+ .header {
+   text-align: center;
+   background: #265728;
+   color: white;
+   font-size: 15px;
+   // padding:10px;
+ }
+ .footer {
+   background:#3d8b40;
+   text-align: center;
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   height: 2.5rem;
+}
+.sidebar {
+  // display: block;
+  // height: 100%;
+  // width: 200px;
+  background-color: #b7dfb8;
+  // position: absolute;
+  // z-index: 1;
+  // overflow: auto;
+}
+.page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.content-wrap {
+  padding-bottom: 2.5rem;    /* Footer height */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;            /* Footer height */
+}
+.container {
+  max-width: inherit;
+}
+body {
+   margin:0;
+   padding:0;
+   height:100%;
+   background-color: #dbefdc;
+}
+
+.menu-set {
+  width: 100%;
+  display: block;
+  padding: 8px 16px;
+  text-align: left;
+  border: none;
+  white-space: normal;
+  float: none;
+  outline: 0;
+  background-color: darkkhaki;
+}
+
+.big {
+  font-size: 74px;
+}
+.midle {
+  font-size: 40px;
+}
+.out {
+  padding: 10px;
+}
+
+.task {
+  // flex-direction: inherit;
+}
+.i-task {
+  font-size: 20px;
+}
+.status {
+  text-decoration: line-through;
+}
